@@ -26,7 +26,17 @@ function renderList() {
     
     for(let i = 0; i < fruits.length; i++) {
         const listElement = document.createElement("li");
-        listElement.innerText = fruits[i];
+
+        const spanElement = document.createElement("span");
+        spanElement.innerText = fruits[i];
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "🗑";
+        deleteButton.classList.add("delete-btn");
+
+        listElement.appendChild(spanElement);
+        listElement.appendChild(deleteButton);
+
         orderedListElement.appendChild(listElement); 
     }    
 
@@ -43,7 +53,7 @@ renderList();
 
 const dontTouchMeButton = document.querySelector("#dont-touch-me-button");
 
-dontTouchMeButton.addEventListener("click", () => {
+dontTouchMeButton.addEventListener("click", (event) => {
     console.log(event)
     alert("Ei tohtinud ju.");
 });

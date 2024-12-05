@@ -82,5 +82,11 @@ addNewFruitForm.addEventListener("submit", (event) => {
 
 fruitListContainer.addEventListener("click", (event) => {
     const buttonElement = event.target.closest(".delete-btn");
-    console.log(buttonElement)
+    const index = parseInt(buttonElement.getAttribute("data-index"));
+
+    // if (!index) return;
+    // TODO: Implement check for index
+
+    fruits.splice(index, 1);
+    renderList()
 });

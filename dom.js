@@ -81,6 +81,6 @@ addNewFruitForm.addEventListener("submit", (event) => {
 //Kustutame elemente
 
 fruitListContainer.addEventListener("click", (event) => {
-    const buttonElement = event.target.closest("delete-btn");
+    const buttonElement = event.target.closest(".delete-btn");
     console.log(buttonElement)
 });

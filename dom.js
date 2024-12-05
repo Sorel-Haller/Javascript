@@ -43,7 +43,12 @@ dontTouchMeButton.addEventListener("click", () => {
 });
 
 
-const addNewFruitForm = document.querySelector("add-new-fruits-form");
+const addNewFruitForm = document.querySelector("#add-new-fruits-form");
 addNewFruitForm.addEventListener("submit", () => {
-    console.log(event)
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    const fruitInput = formData.get("fruit");
+    console.log(fruitInput);
 });

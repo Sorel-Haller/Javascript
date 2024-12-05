@@ -41,3 +41,9 @@ dontTouchMeButton.addEventListener("click", () => {
     console.log(event)
     alert("Ei tohtinud ju.");
 });
+
+
+const addNewFruitForm = document.querySelector("add-new-fruits-form");
+addNewFruitForm.addEventListener("submit", () => {
+    console.log(event)
+});

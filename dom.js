@@ -17,18 +17,24 @@ h1Element.innerText = "Head teed!"
   * </ol>
   */
 const fruits = ["Apple" , "Orange", "Banana", "Mango", "Kiwi"];
+
 const fruitListContainer = document.querySelector("#fruit-list");
 
-const orderedListElement = document.createElement("ol");
-
-for(let i = 0; i < fruits.length; i++) {
-    const listElement = document.createElement("li");
-    listElement.innerText = fruits[i];
-    orderedListElement.appendChild(listElement);
+function renderList() {
+    fruitListContainer.innerHTML = "";
+    const orderedListElement = document.createElement("ol");
     
-}
+    for(let i = 0; i < fruits.length; i++) {
+        const listElement = document.createElement("li");
+        listElement.innerText = fruits[i];
+        orderedListElement.appendChild(listElement); 
+    }    
 
-fruitListContainer.appendChild(orderedListElement);
+    fruitListContainer.appendChild(orderedListElement);
+};
+
+renderList();
+
 
 /**
  * EVENT-DRIVEN
@@ -51,4 +57,12 @@ addNewFruitForm.addEventListener("submit", () => {
 
     const fruitInput = formData.get("fruit");
     console.log(fruitInput);
+
+    if(!fruitInput.trim()) return;
+    //Kui kõik hästi
+
+    fruits.push(fruitInput);
+    renderList();
+
+    event.target.reset();
 });

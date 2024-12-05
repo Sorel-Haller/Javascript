@@ -33,6 +33,7 @@ function renderList() {
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "🗑";
         deleteButton.classList.add("delete-btn");
+        deleteButton.setAttribute("data-index", i);
 
         listElement.appendChild(spanElement);
         listElement.appendChild(deleteButton);
@@ -60,7 +61,7 @@ dontTouchMeButton.addEventListener("click", (event) => {
 
 
 const addNewFruitForm = document.querySelector("#add-new-fruits-form");
-addNewFruitForm.addEventListener("submit", () => {
+addNewFruitForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -75,4 +76,11 @@ addNewFruitForm.addEventListener("submit", () => {
     renderList();
 
     event.target.reset();
+});
+
+//Kustutame elemente
+
+fruitListContainer.addEventListener("click", (event) => {
+    const buttonElement = event.target.closest("delete-btn");
+    console.log(buttonElement)
 });

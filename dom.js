@@ -7,15 +7,6 @@
 const h1Element = document.querySelector("h1");
 h1Element.innerText = "Head teed!"
 
- /**
-  * HTML
-  * <ol>
-  *     <li>
-  *     <li>
-  *     <li>
-  *     <li>
-  * </ol>
-  */
 const fruits = ["Apple" , "Orange", "Banana", "Mango", "Kiwi"];
 
 const fruitListContainer = document.querySelector("#fruit-list");
